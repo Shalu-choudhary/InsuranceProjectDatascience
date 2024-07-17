@@ -1,0 +1,43 @@
+
+
+body{
+    background-color: beige
+}
+
+.btn{
+    /* color: black; */
+    border-radius: 7px;
+    border: 2px solid red;
+}
+
+p{
+    font-size: 1.2rem;
+}
+#heading{
+    text-align: center;
+}
+footer{
+    background-color:  rgb(236, 236, 181);
+    height: 80px;
+}
+
+.container{
+    margin-top: 80px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+
+    
+}
+h2{
+text-align: center;
+}
+button{
+    border-radius: 9px;
+    border: 2px solid ;
+    font-size: 15px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Insurace prediction</title>
+        <link rel="stylesheet" href="C:\Users\hp\Desktop\Insurence_project\static\style.css" />
+        <body>
+    <h2>Get insurance premium charges prediction </h2>
+    <hr>
+    <div class="container">
+ <form action="{{ url_for('prediction') }}" method="post">
+    <label for="">Region :</label>
+    <select name="region" id="">
+        <option value="">northeast</option>
+        <option value="">southeast</option>
+        <option value="">northwest</option>
+        <option value="">southwest</option>
+    </select><br><br>
+
+    <label for="">Children :</label>
+    <select name="Children" id="">
+        <option value="">0</option>
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>   
+    </select><br><br>
+
+    <label for="">Health_Category :</label>
+    <select name="Health" id="">
+        <option value="">UnderWeight</option>
+        <option value="">OverWeigth</option>
+        <option value="">HealthyWeight</option>
+        <option value="">Obese</option>
+        
+    </select><br><br>
+
+    <label for="">Gender :</label>
+    <select name="Gender" id="">
+        <option value="">female</option>
+        <option value="">male</option>
+    </select><br><br>
+
+    <label for="">Smoker :</label>
+    <select name="smoker" id="">
+        <option value="">yes</option>
+        <option value="">no</option>
+    </select><br><br>
+
+    <label for="">Age :</label>
+    <input type="text" name="Age"></input>
+    <br><br>
+
+    <label for="">BMI :</label>
+    <input type="text" name=bmi></input>
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+</div>
+        </body>
+    </head>
+    </html>
+
+    <!--'age', 'gender', 'bmi', 'children', 'smoker', 'weight',
+       'region_northeast', 'region_northwest', 'region_southeast',
+       'region_southwest'-->
