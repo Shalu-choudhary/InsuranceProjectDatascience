@@ -4,7 +4,7 @@ body{
     background-color: beige
 }
 
-.btn{
+#btn{
     /* color: black; */
     border-radius: 7px;
     border: 2px solid red;

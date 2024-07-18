@@ -1,0 +1,6 @@
+numpy
+pandas 
+matplotlib
+sql
+joblib
+pip install mysql-connector-python   for already mysql
