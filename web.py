@@ -1,12 +1,21 @@
 from flask import Flask, render_template,url_for,request
 import joblib
+import sqlite3
+
+
+
 
 #load
 # linear_model=joblib.load("./models/linearmodel.lb")
 # decision_model=joblib.load("./models/decisiontree.lb")
 random_model=joblib.load("./models/randomforest.lb")
 
+
 app=Flask(__name__)
+data_insertquery=""" create table project
+(age,gender,bmi,region,children,smoker,health,prediction)
+values(?,?,?,?,?,?,?,?)"""
+
 @app.route("/")
 
 def home():
@@ -46,15 +55,25 @@ def predict():
         
         unseen_data=[[age,gender,bmi,children,smoker,health,region_northeast,region_northwest,region_southeast,region_southwest]]
         # return[region,children,gender,smoker,health,age,bmi]
-        prediction=random_model.predict(unseen_data)[0]
+        prediction=str(random_model.predict(unseen_data)[0])
         print("total charges is : ",prediction)
-        return unseen_data
+        connection=sqlite3.connect('insurance.db')
+        cur=connection.cursor()
+       
+        data=(age,gender,bmi,region,children,smoker,health,prediction)
+        cur.execute(data_insertquery,data)
+        print("your data is inserted",data)
+        connection.commit()
+        cur.close()
+        connection.close()
+        # return unseen_data
+        return render_template('final.html',output=prediction)
 
         
 #         # prediction_=model.predict(data)[0]
 #         # prediction
         
-        
+      # assignment--->  
         
 
 
