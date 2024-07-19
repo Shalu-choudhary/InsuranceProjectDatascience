@@ -3,7 +3,7 @@ import sqlite3
 connection=sqlite3.connect('insurance.db')
 
 query="""create table project 
-(age integer,gender integer, bmi integer, region varchar(5),children integer,smoker integer,health integer,prediction varchar(10))"""
+(age integer,gender varchar(5),bmi integer ,children integer,smoker varchar(5),region varchar(5),weight varchar(10),prediction varchar(10))"""
 query_to_fetch="""
 select * from project 
 """
